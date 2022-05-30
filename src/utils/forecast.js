@@ -9,7 +9,7 @@ const forecast = (lat, lon, callback) => {
             } else if(body.message) {
                 callback('Unable to find locations', undefined)
             } else {
-                callback(undefined, body.current.weather[0].description +'. It is currently '+body.current.temp+' degrees out, there is '+ body.current.humidity+' % humidity')
+                callback(undefined, body.current.weather[0].description +'. It is currently '+body.current.temp+' degrees out, there is '+ body.current.humidity+' % humidity. The max temperature and min temperature of the day are '+ body.daily[0].temp.max+' and '+ body.daily[0].temp.min+' degrees respectively.')
             }
         })
 }
